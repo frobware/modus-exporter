@@ -69,19 +69,19 @@ is already a hex string it will be returned unmodified."
     ;; Otherwise fetch the hex string from the specified theme
     (progn
 
-      (defvar modus-operandi-theme-default-colors-alist)
-      (defvar modus-vivendi-theme-default-colors-alist)
-      (defvar modus-operandi-theme-override-colors-alist)
-      (defvar modus-vivendi-theme-override-colors-alist)
+      (defvar modus-themes-vivendi-colors)
+      (defvar modus-themes-operandi-colors)
+      (defvar modus-themes-vivendi-color-overrides)
+      (defvar modus-themes-operandi-color-overrides)
 
       (catch 'invalid-theme
         (let (
               (colour-list (cond
-                            ((eq theme-name 'operandi) modus-operandi-theme-default-colors-alist)
-                            ((eq theme-name 'vivendi) modus-vivendi-theme-default-colors-alist)))
+                            ((eq theme-name 'operandi) modus-themes-operandi-colors)
+                            ((eq theme-name 'vivendi) modus-themes-vivendi-colors)))
               (override-colour-list (cond
-                            ((eq theme-name 'operandi) modus-operandi-theme-override-colors-alist)
-                            ((eq theme-name 'vivendi) modus-vivendi-theme-override-colors-alist))))
+                            ((eq theme-name 'operandi) modus-themes-operandi-color-overrides)
+                            ((eq theme-name 'vivendi) modus-themes-vivendi-color-overrides))))
 
           (if (not colour-list)
               (progn
